@@ -35,38 +35,27 @@ const Layout: React.FC = () => {
                         <h2 className="text-lg font-bold text-primary font-headline">Navigation</h2>
                         <p className="text-xs text-on-surface-variant font-medium opacity-60 uppercase tracking-widest">Page Selection</p>
                     </div>
-                    <nav className="flex-1 space-y-1">
-                        <section className="mb-4">
-                            <p className="px-4 text-[10px] font-bold text-on-surface-variant uppercase tracking-widest mb-2 opacity-50">Planning & Deployment</p>
-                            <NavLink to="/" className={({ isActive }) => `flex items-center gap-3 px-4 py-2 rounded-lg transition-all font-medium text-xs ${isActive ? 'bg-primary text-white shadow-md' : 'text-on-surface-variant hover:bg-surface-container-low'}`}>
-                                <span className="material-symbols-outlined text-sm">dashboard</span>
-                                <span>Status</span>
-                            </NavLink>
-                            <NavLink to="/planner" className={({ isActive }) => `flex items-center gap-3 px-4 py-2 rounded-lg transition-all font-medium text-xs ${isActive ? 'bg-primary text-white shadow-md' : 'text-on-surface-variant hover:bg-surface-container-low'}`}>
-                                <span className="material-symbols-outlined text-sm">explore</span>
-                                <span>Route Planner</span>
-                            </NavLink>
-                            <NavLink to="/checkout" className={({ isActive }) => `flex items-center gap-3 px-4 py-2 rounded-lg transition-all font-medium text-xs ${isActive ? 'bg-primary text-white shadow-md' : 'text-on-surface-variant hover:bg-surface-container-low'}`}>
-                                <span className="material-symbols-outlined text-sm">shopping_cart</span>
-                                <span>Checkout</span>
-                            </NavLink>
-                        </section>
-
-                        <section className="mb-4 pt-2 border-t border-outline-variant/10">
-                            <p className="px-4 text-[10px] font-bold text-on-surface-variant uppercase tracking-widest mb-2 opacity-50">Reports Engine</p>
-                            <NavLink to="/reports" className={({ isActive }) => `flex items-center gap-3 px-4 py-2 rounded-lg transition-all font-medium text-xs ${isActive ? 'bg-primary text-white shadow-md' : 'text-on-surface-variant hover:bg-surface-container-low'}`}>
-                                <span className="material-symbols-outlined text-sm">bar_chart</span>
-                                <span>Intelligence</span>
-                            </NavLink>
-                            <NavLink to="/scheduled-reports" className={({ isActive }) => `flex items-center gap-3 px-4 py-2 rounded-lg transition-all font-medium text-xs ${isActive ? 'bg-primary text-white shadow-md' : 'text-on-surface-variant hover:bg-surface-container-low'}`}>
-                                <span className="material-symbols-outlined text-sm">schedule_send</span>
-                                <span>Scheduled</span>
-                            </NavLink>
-                            <NavLink to="/export-config" className={({ isActive }) => `flex items-center gap-3 px-4 py-2 rounded-lg transition-all font-medium text-xs ${isActive ? 'bg-primary text-white shadow-md' : 'text-on-surface-variant hover:bg-surface-container-low'}`}>
-                                <span className="material-symbols-outlined text-sm">ios_share</span>
-                                <span>Export Hub</span>
-                            </NavLink>
-                        </section>
+                    <nav className="flex-1 space-y-2">
+                        <NavLink to="/inventory" className={({ isActive }) => `flex items-center gap-3 px-4 py-3 rounded-xl transition-all font-medium text-sm ${isActive ? 'bg-primary text-white shadow-premium' : 'text-on-surface-variant hover:bg-surface-container-low'}`}>
+                            <span className="material-symbols-outlined">explore</span>
+                            <span>Discovery Inventory</span>
+                        </NavLink>
+                        <NavLink to="/planner" className={({ isActive }) => `flex items-center gap-3 px-4 py-3 rounded-xl transition-all font-medium text-sm ${isActive ? 'bg-primary text-white shadow-premium' : 'text-on-surface-variant hover:bg-surface-container-low'}`}>
+                            <span className="material-symbols-outlined">directions_car</span>
+                            <span>Route Planner</span>
+                        </NavLink>
+                        <NavLink to="/builder" className={({ isActive }) => `flex items-center gap-3 px-4 py-3 rounded-xl transition-all font-medium text-sm ${isActive ? 'bg-primary text-white shadow-premium' : 'text-on-surface-variant hover:bg-surface-container-low'}`}>
+                            <span className="material-symbols-outlined">ads_click</span>
+                            <span>Campaign Builder</span>
+                        </NavLink>
+                        <NavLink to="/reports" className={({ isActive }) => `flex items-center gap-3 px-4 py-3 rounded-xl transition-all font-medium text-sm ${isActive ? 'bg-primary text-white shadow-premium' : 'text-on-surface-variant hover:bg-surface-container-low'}`}>
+                            <span className="material-symbols-outlined">bar_chart</span>
+                            <span>Reports</span>
+                        </NavLink>
+                        <NavLink to="/profile" className={({ isActive }) => `flex items-center gap-3 px-4 py-3 rounded-xl transition-all font-medium text-sm ${isActive ? 'bg-primary text-white shadow-premium' : 'text-on-surface-variant hover:bg-surface-container-low'}`}>
+                            <span className="material-symbols-outlined">account_circle</span>
+                            <span>Profile</span>
+                        </NavLink>
                     </nav>
                 </aside>
 
