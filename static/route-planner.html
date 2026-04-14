@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Route Planner | Precision Architect</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" />
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#003461",
+                        "primary-container": "#004b87",
+                        secondary: "#006b5f",
+                        "secondary-container": "#8df5e4",
+                        "on-secondary-container": "#007165",
+                        surface: "#f7f9fb",
+                        "on-surface": "#191c1e",
+                        "surface-container-low": "#f2f4f6",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface-variant": "#424750",
+                        "outline-variant": "#c2c6d1",
+                    },
+                    fontFamily: {
+                        headline: ["Manrope"],
+                        body: ["Inter"],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-surface font-body text-on-surface">
+    <!-- TopNavBar -->
+    <header
+        class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md flex justify-between items-center h-16 px-8 border-b border-outline-variant/10">
+        <div class="flex items-center gap-8">
+            <span class="text-xl font-black text-primary font-headline tracking-tight">Horizon Analytics</span>
+            <nav class="hidden md:flex gap-6 items-center">
+                <a href="#"
+                    class="font-headline font-semibold text-on-surface-variant hover:text-primary transition-all">Dashboard</a>
+                <a href="#"
+                    class="font-headline font-semibold text-primary border-b-2 border-primary pb-1">Campaigns</a>
+                <a href="#"
+                    class="font-headline font-semibold text-on-surface-variant hover:text-primary transition-all">Inventory</a>
+                <a href="#"
+                    class="font-headline font-semibold text-on-surface-variant hover:text-primary transition-all">Reports</a>
+            </nav>
+        </div>
+        <div class="flex items-center gap-4">
+            <span class="material-symbols-outlined text-on-surface-variant cursor-pointer">notifications</span>
+            <span class="material-symbols-outlined text-on-surface-variant cursor-pointer">settings</span>
+            <div class="w-8 h-8 rounded-full bg-surface-container overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=facearea&facepad=2&w=100&h=100&q=80"
+                    alt="Profile" class="w-full h-full object-cover">
+            </div>
+        </div>
+    </header>
+
+    <div class="flex pt-16">
+        <!-- SideNavBar -->
+        <aside
+            class="h-[calc(100vh-64px)] w-64 fixed left-0 top-16 bg-white flex flex-col py-6 px-4 border-r border-outline-variant/10">
+            <nav class="flex-1 space-y-1">
+                <a href="deployment-status.html"
+                    class="flex items-center gap-3 px-4 py-3 rounded-xl transition-all font-medium text-sm text-on-surface-variant hover:bg-surface-container-low">
+                    <span class="material-symbols-outlined">analytics</span>
+                    <span>Status</span>
+                </a>
+                <a href="route-planner.html"
+                    class="flex items-center gap-3 px-4 py-3 rounded-xl transition-all font-medium text-sm bg-primary text-white shadow-premium">
+                    <span class="material-symbols-outlined">explore</span>
+                    <span>Route Planner</span>
+                </a>
+                <a href="route-inventory-list.html"
+                    class="flex items-center gap-3 px-4 py-3 rounded-xl transition-all font-medium text-sm text-on-surface-variant hover:bg-surface-container-low">
+                    <span class="material-symbols-outlined">list_alt</span>
+                    <span>Inventory</span>
+                </a>
+                <a href="route-checkout.html"
+                    class="flex items-center gap-3 px-4 py-3 rounded-xl transition-all font-medium text-sm text-on-surface-variant hover:bg-surface-container-low">
+                    <span class="material-symbols-outlined">shopping_cart</span>
+                    <span>Checkout</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="ml-64 w-full p-8 max-w-[1600px] mx-auto min-h-screen">
+            <div class="flex justify-between items-end mb-10">
+                <div>
+                    <h1 class="text-3xl font-extrabold text-primary tracking-tight font-headline">Route-Based Planner
+                    </h1>
+                    <p class="text-on-surface-variant mt-1 font-medium">Engineer high-impact campaigns across transit
+                        corridors.</p>
+                </div>
+                <button
+                    class="px-8 py-3 btn-gradient text-white rounded-2xl font-black text-sm shadow-xl flex items-center gap-3">
+                    <span class="material-symbols-outlined">rocket_launch</span>
+                    Deploy Campaign
+                </button>
+            </div>
+
+            <div class="grid grid-cols-12 gap-8">
+                <div class="col-span-4 space-y-6">
+                    <div class="bg-white p-8 rounded-3xl shadow-sm border border-outline-variant/10">
+                        <h3
+                            class="text-xs font-black uppercase tracking-[0.2em] text-on-surface-variant mb-8 flex items-center gap-3 opacity-60">
+                            <span class="material-symbols-outlined text-primary text-xl">route</span>
+                            Configuration
+                        </h3>
+                        <div class="space-y-4">
+                            <div class="bg-surface-container-low p-4 rounded-xl">
+                                <span class="text-[10px] font-black uppercase tracking-widest opacity-40">Origin</span>
+                                <p class="font-bold text-sm text-primary">Silicon Valley, San Jose, CA</p>
+                            </div>
+                            <div class="bg-surface-container-low p-4 rounded-xl">
+                                <span
+                                    class="text-[10px] font-black uppercase tracking-widest opacity-40">Destination</span>
+                                <p class="font-bold text-sm text-primary">San Francisco Downtown, CA</p>
+                            </div>
+                            <button
+                                class="w-full py-4 bg-primary text-white rounded-2xl font-black text-sm tracking-widest mt-4">CALCULATE
+                                IMPACT</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-span-8 h-[600px] bg-slate-100 rounded-[2.5rem] overflow-hidden relative shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&q=80&w=1200"
+                        class="w-full h-full object-cover grayscale brightness-75" alt="Map">
+                    <div
+                        class="absolute bottom-8 left-8 right-8 glass-panel px-8 py-6 rounded-3xl border border-white/40 flex items-center justify-between">
+                        <div class="flex items-center gap-6">
+                            <div class="flex flex-col">
+                                <span class="text-[10px] font-black uppercase tracking-widest opacity-40">Weekly
+                                    Reach</span>
+                                <span class="text-2xl font-black text-primary">2.4M IMP</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>
