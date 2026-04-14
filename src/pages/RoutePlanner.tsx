@@ -1,169 +1,215 @@
 import React from 'react';
+import {
+    Explore,
+    Map as MapIcon,
+    Route as RouteIcon,
+    AddLocationAlt,
+    Save,
+    Settings,
+    ChevronRight,
+    TrendingUp,
+    Tune,
+    Traffic,
+    Timer
+} from '@mui/icons-material';
 
 const RoutePlanner: React.FC = () => {
     return (
-        <div className="bg-surface text-on-surface min-h-screen font-body">
-            <main className="p-8 max-w-[1600px] mx-auto">
-                <div className="flex justify-between items-end mb-10">
-                    <div>
-                        <h1 className="text-4xl font-extrabold text-primary tracking-tight font-headline">Route-Based Planner</h1>
-                        <p className="text-on-surface-variant mt-2 font-medium">Engineer high-impact OOH campaigns across transit corridors.</p>
-                    </div>
-                    <div className="flex gap-4">
-                        <button className="px-6 py-3 bg-surface-container-lowest text-primary border border-outline-variant/30 rounded-2xl font-bold text-sm hover:bg-surface-container-low transition-colors shadow-sm flex items-center gap-3">
-                            <span className="material-symbols-outlined text-xl">save</span>
-                            Save Route
-                        </button>
-                        <button className="px-8 py-3 btn-gradient text-white rounded-2xl font-black text-sm shadow-xl shadow-primary/20 flex items-center gap-3 active:scale-95 transition-all">
-                            <span className="material-symbols-outlined text-xl">rocket_launch</span>
-                            Deploy Campaign
-                        </button>
-                    </div>
+        <div className="flex h-full bg-surface-container-low">
+            {/* Left Planning Panel */}
+            <aside className="w-96 h-full bg-white border-r border-outline-variant/10 flex flex-col shrink-0 shadow-premium">
+                <div className="p-8 border-b border-outline-variant/5">
+                    <nav className="flex items-center gap-2 text-[10px] text-on-surface-variant mb-2 uppercase font-black tracking-widest">
+                        <span>Planner</span>
+                        <ChevronRight className="!text-[10px]" />
+                        <span className="text-primary">New Campaign Route</span>
+                    </nav>
+                    <h2 className="text-2xl font-black text-primary font-headline tracking-tighter">Strategic Routing</h2>
+                    <p className="text-on-surface-variant text-xs mt-1">Optimize media delivery along prime commuter paths.</p>
                 </div>
 
-                <div className="grid grid-cols-12 gap-8 items-start">
-                    {/* Left Panel: Input & Controls */}
-                    <div className="col-span-12 lg:col-span-4 space-y-6">
-                        <div className="bg-surface-container-lowest p-8 rounded-2xl shadow-sm border border-outline-variant/10">
-                            <h3 className="text-sm font-bold uppercase tracking-widest text-on-surface-variant mb-8 flex items-center gap-3">
-                                <span className="material-symbols-outlined text-primary text-2xl">route</span>
-                                Route Configuration
-                            </h3>
-                            <div className="space-y-6">
-                                <div className="relative">
-                                    <label className="text-[10px] font-black text-on-surface-variant uppercase absolute left-4 top-3 z-10 opacity-70">Origin</label>
-                                    <div className="flex items-center pt-8 pb-3 px-4 bg-surface-container-low rounded-2xl group focus-within:ring-2 focus-within:ring-primary/10 transition-all border border-transparent focus-within:border-primary/20">
-                                        <span className="material-symbols-outlined text-primary mr-3" style={{ fontVariationSettings: "'FILL' 1" }}>my_location</span>
-                                        <input className="bg-transparent border-none p-0 text-sm font-bold w-full focus:ring-0 text-on-surface" type="text" defaultValue="Silicon Valley, San Jose, CA" />
-                                    </div>
-                                    <div className="h-6 w-[2px] bg-primary/20 ml-8 my-1"></div>
-                                    <label className="text-[10px] font-black text-on-surface-variant uppercase absolute left-4 top-24 z-10 opacity-70">Destination</label>
-                                    <div className="flex items-center pt-8 pb-3 px-4 bg-surface-container-low rounded-2xl group focus-within:ring-2 focus-within:ring-primary/10 transition-all border border-transparent focus-within:border-primary/20">
-                                        <span className="material-symbols-outlined text-error mr-3" style={{ fontVariationSettings: "'FILL' 1" }}>location_on</span>
-                                        <input className="bg-transparent border-none p-0 text-sm font-bold w-full focus:ring-0 text-on-surface" type="text" defaultValue="San Francisco Downtown, CA" />
-                                    </div>
-                                </div>
-
-                                <div className="pt-4 space-y-6">
-                                    <div>
-                                        <label className="text-[11px] font-black text-on-surface-variant uppercase mb-3 block opacity-70 tracking-widest">Asset Portfolio</label>
-                                        <div className="grid grid-cols-2 gap-3">
-                                            <button className="flex items-center justify-center gap-3 p-4 rounded-xl border-2 border-primary bg-primary/5 text-primary font-bold text-xs transition-all shadow-sm">
-                                                <span className="material-symbols-outlined text-lg" style={{ fontVariationSettings: "'FILL' 1" }}>check_circle</span>
-                                                Digital
-                                            </button>
-                                            <button className="flex items-center justify-center gap-3 p-4 rounded-xl border-2 border-outline-variant/30 text-on-surface-variant font-bold text-xs hover:border-primary/50 transition-all">
-                                                <span className="material-symbols-outlined text-lg">radio_button_unchecked</span>
-                                                Static
-                                            </button>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <label className="text-[11px] font-black text-on-surface-variant uppercase mb-3 block opacity-70 tracking-widest">Budget Tier</label>
-                                        <div className="relative">
-                                            <span className="absolute left-5 top-1/2 -translate-y-1/2 font-black text-on-surface-variant/40 text-lg">$</span>
-                                            <input className="w-full pl-10 pr-4 py-4 bg-surface-container-low border-none rounded-2xl text-xl font-black text-primary focus:ring-2 focus:ring-primary/10 tracking-tight" type="number" defaultValue="125000" />
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <button className="w-full py-5 bg-primary text-white rounded-2xl font-black text-sm tracking-widest shadow-2xl shadow-primary/20 hover:brightness-110 active:scale-[0.98] transition-all flex items-center justify-center gap-4">
-                                    <span className="material-symbols-outlined">analytics</span>
-                                    CALCULATE ROUTE IMPACT
-                                </button>
-                            </div>
-                        </div>
-
-                        {/* AI Insights Card */}
-                        <div className="bg-primary/5 p-8 rounded-2xl border border-primary/10 flex flex-col gap-4">
-                            <div className="flex items-center justify-between">
-                                <h4 className="text-sm font-black text-primary flex items-center gap-3 tracking-widest uppercase">
-                                    <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>bolt</span>
-                                    AI Strategic Insight
-                                </h4>
-                            </div>
-                            <p className="text-xs text-on-surface-variant leading-relaxed font-semibold">
-                                Expanding your search radius by <span className="text-primary font-black underline decoration-primary/30">1.2 miles</span> on HWY-101 could unlock <span className="text-secondary font-black">14% higher reach</span> with only an <span className="text-primary font-black">8% budget expansion</span> level.
-                            </p>
-                        </div>
-                    </div>
-
-                    {/* Center: Map Canvas */}
-                    <div className="col-span-12 lg:col-span-5 h-[800px] relative rounded-[2rem] overflow-hidden shadow-2xl shadow-on-surface/5 border border-outline-variant/10">
-                        <div className="absolute inset-0 bg-slate-900 overflow-hidden">
-                            <img className="w-full h-full object-cover grayscale brightness-50 opacity-60 scale-110" src="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&q=80&w=1200" alt="Map View" />
-                            <div className="absolute inset-0 bg-gradient-to-t from-primary/30 to-transparent"></div>
-                            {/* UI Elements for Map */}
-                            <div className="absolute top-8 left-8 flex flex-col gap-4">
-                                <div className="glass-panel p-2 rounded-2xl shadow-2xl border border-white/20 flex flex-col gap-1">
-                                    <button className="w-12 h-12 rounded-xl flex items-center justify-center text-primary bg-white/40 hover:bg-white transition-all">
-                                        <span className="material-symbols-outlined">add</span>
-                                    </button>
-                                    <button className="w-12 h-12 rounded-xl flex items-center justify-center text-primary bg-white/40 hover:bg-white transition-all">
-                                        <span className="material-symbols-outlined">remove</span>
-                                    </button>
-                                </div>
-                            </div>
-
-                            <div className="absolute bottom-10 left-10 right-10">
-                                <div className="glass-panel px-8 py-6 rounded-[2rem] shadow-2xl border border-white/40 flex items-center justify-between">
-                                    <div className="flex items-center gap-6">
-                                        <div className="flex flex-col">
-                                            <span className="text-[10px] uppercase font-black tracking-widest text-on-surface-variant opacity-60">Avg. Velocity</span>
-                                            <span className="text-xl font-black text-primary">54 MPH</span>
-                                        </div>
-                                        <div className="h-8 w-px bg-outline-variant/20"></div>
-                                        <div className="flex flex-col">
-                                            <span className="text-[10px] uppercase font-black tracking-widest text-on-surface-variant opacity-60">Est. Reach</span>
-                                            <span className="text-xl font-black text-primary">2.4M / WK</span>
-                                        </div>
-                                    </div>
-                                    <button className="px-6 py-3 bg-primary text-white font-bold rounded-xl shadow-lg hover:shadow-primary/20 transition-all flex items-center gap-3">
-                                        View Points
-                                        <span className="material-symbols-outlined text-sm">open_in_new</span>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Right: Asset Inventory Preview */}
-                    <div className="col-span-12 lg:col-span-3 space-y-6">
-                        <div className="flex items-center justify-between px-2">
-                            <h3 className="text-sm font-black text-primary tracking-widest uppercase">Inventory Previews</h3>
-                            <button className="text-[10px] font-black text-secondary flex items-center gap-1 hover:underline uppercase tracking-tighter">
-                                Select Route Bundle
+                <div className="flex-1 overflow-y-auto p-8 space-y-8 no-scrollbar">
+                    {/* Navigation Mode */}
+                    <section>
+                        <label className="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant mb-3 block">Optimization Goal</label>
+                        <div className="grid grid-cols-2 gap-2">
+                            <button className="flex flex-col items-center gap-2 p-4 rounded-xl border-2 border-primary bg-primary/5 text-primary">
+                                <TrendingUp />
+                                <span className="text-xs font-bold">Impressions</span>
+                            </button>
+                            <button className="flex flex-col items-center gap-2 p-4 rounded-xl border-2 border-transparent bg-surface-container-low text-on-surface-variant hover:border-outline-variant/30 transition-all">
+                                <Timer />
+                                <span className="text-xs font-bold">Frequency</span>
                             </button>
                         </div>
-                        <div className="space-y-4 max-h-[720px] overflow-y-auto pr-2 custom-scrollbar no-scrollbar">
-                            {[1, 2, 3].map((item) => (
-                                <div key={item} className="bg-surface-container-lowest p-4 rounded-2xl shadow-sm border border-outline-variant/10 group cursor-pointer hover:border-primary/30 transition-all hover:shadow-md">
-                                    <div className="relative h-32 rounded-xl overflow-hidden mb-4">
-                                        <img className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" src={`https://images.unsplash.com/photo-1542${744 + item}173-8e7e53415bb0?auto=format&fit=crop&q=80&w=400`} alt="Billboard" />
-                                        <div className="absolute top-3 left-3 bg-secondary text-white text-[9px] font-black px-3 py-1 rounded-full uppercase tracking-widest whitespace-nowrap">Digital OOH</div>
-                                        <button className="absolute top-3 right-3 w-8 h-8 bg-white/90 rounded-full flex items-center justify-center text-primary shadow-lg scale-0 group-hover:scale-100 transition-transform">
-                                            <span className="material-symbols-outlined text-sm">favorite</span>
-                                        </button>
-                                    </div>
-                                    <div className="flex justify-between items-start mb-3">
-                                        <div>
-                                            <h4 className="text-xs font-black text-on-surface group-hover:text-primary transition-colors">SF-101 Transit Hub</h4>
-                                            <p className="text-[10px] text-on-surface-variant font-medium">Mission District Corridor</p>
-                                        </div>
-                                        <span className="text-xs font-black text-secondary">$1,200</span>
-                                    </div>
-                                    <div className="flex gap-2 border-t border-outline-variant/10 pt-3">
-                                        <span className="px-2 py-1 bg-surface-container text-[8px] font-black rounded uppercase text-on-surface-variant">32k IMP</span>
-                                        <span className="px-2 py-1 bg-surface-container text-[8px] font-black rounded uppercase text-on-surface-variant">H-TRAFFIC</span>
-                                    </div>
+                    </section>
+
+                    {/* Route Nodes */}
+                    <section>
+                        <div className="flex justify-between items-center mb-4">
+                            <label className="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant block">Route Waypoints</label>
+                            <button className="text-[10px] font-black text-secondary uppercase tracking-tighter flex items-center gap-1">
+                                <AddLocationAlt className="!text-xs" /> Add Node
+                            </button>
+                        </div>
+                        <div className="space-y-3 relative">
+                            <div className="absolute left-[19px] top-6 bottom-6 w-0.5 bg-gradient-to-b from-primary via-primary/20 to-secondary border-l border-dashed border-primary/30"></div>
+                            <RouteNode
+                                label="Primary Market Origin"
+                                address="Santa Monica Blvd & 4th St"
+                                status="Active"
+                                dotColor="bg-primary"
+                            />
+                            <RouteNode
+                                label="Mid-Route Transit Hub"
+                                address="Wilshire / Vermont Station"
+                                status="Optimizing"
+                                dotColor="bg-primary/50"
+                            />
+                            <RouteNode
+                                label="Campaign Destination"
+                                address="Grand Central Market, DTLA"
+                                status="Target Meta"
+                                dotColor="bg-secondary"
+                            />
+                        </div>
+                    </section>
+
+                    {/* Parameters */}
+                    <section className="bg-surface-container-low/50 p-6 rounded-2xl border border-outline-variant/10">
+                        <h3 className="text-sm font-bold text-on-surface mb-4 flex items-center gap-2">
+                            <Tune className="!text-sm" /> Route Constraints
+                        </h3>
+                        <div className="space-y-4">
+                            <div className="flex justify-between items-center">
+                                <span className="text-xs text-on-surface-variant font-medium">Traffic Density Factor</span>
+                                <span className="text-xs font-bold text-primary">High (0.85)</span>
+                            </div>
+                            <div className="h-1 w-full bg-surface-container rounded-full overflow-hidden">
+                                <div className="h-full bg-primary w-[85%]"></div>
+                            </div>
+                            <div className="flex justify-between items-center pt-2">
+                                <span className="text-xs text-on-surface-variant font-medium">Auto-Optimize Path</span>
+                                <div className="w-10 h-5 bg-secondary rounded-full relative">
+                                    <div className="absolute right-1 top-1 w-3 h-3 bg-white rounded-full"></div>
                                 </div>
-                            ))}
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <div className="p-8 space-y-3">
+                    <button className="w-full bg-primary text-white py-4 rounded-xl font-black text-sm shadow-xl flex items-center justify-center gap-2 hover:bg-primary-container transition-all">
+                        <Explore /> Calculate Intelligence
+                    </button>
+                    <button className="w-full py-4 text-primary font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-2 hover:bg-primary/5 rounded-xl transition-all">
+                        <Save className="!text-sm" /> Save Route Template
+                    </button>
+                </div>
+            </aside>
+
+            {/* Main Canvas Area */}
+            <section className="flex-1 relative overflow-hidden bg-slate-900">
+                {/* Placeholder for Interactive Map */}
+                <div className="absolute inset-0 grayscale opacity-40 mix-blend-overlay">
+                    <img
+                        src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&q=80&w=2000"
+                        alt="City Map Background"
+                        className="w-full h-full object-cover"
+                    />
+                </div>
+
+                {/* Map UI Overlays */}
+                <div className="absolute top-8 left-8 flex gap-3">
+                    <div className="bg-white/90 backdrop-blur-xl p-4 rounded-2xl shadow-premium border border-white/40 flex items-center gap-4">
+                        <div className="p-2 bg-primary/10 rounded-lg text-primary">
+                            <Traffic />
+                        </div>
+                        <div>
+                            <p className="text-[10px] text-on-surface-variant font-bold uppercase tracking-widest">Real-time Load</p>
+                            <p className="text-sm font-black text-on-surface">1.2M Vehicles/Day</p>
+                        </div>
+                    </div>
+                    <div className="bg-white/90 backdrop-blur-xl p-4 rounded-2xl shadow-premium border border-white/40 flex items-center gap-4">
+                        <div className="p-2 bg-secondary/10 rounded-lg text-secondary">
+                            <MapIcon />
+                        </div>
+                        <div>
+                            <p className="text-[10px] text-on-surface-variant font-bold uppercase tracking-widest">Coverage Delta</p>
+                            <p className="text-sm font-black text-on-surface">94.2% Accuracy</p>
                         </div>
                     </div>
                 </div>
-            </main>
+
+                {/* Map Toolbars */}
+                <div className="absolute bottom-8 right-8 flex flex-col gap-3">
+                    <button className="w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors">
+                        <AddLocationAlt />
+                    </button>
+                    <button className="w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors">
+                        <RouteIcon />
+                    </button>
+                    <button className="w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors">
+                        <Settings />
+                    </button>
+                </div>
+
+                {/* Map Active Route Indication */}
+                <svg className="absolute inset-0 pointer-events-none w-full h-full" viewBox="0 0 1000 800">
+                    <path
+                        d="M200,400 L400,300 L600,500 L800,200"
+                        fill="none"
+                        stroke="#003461"
+                        strokeWidth="8"
+                        strokeLinecap="round"
+                        strokeDasharray="1, 15"
+                        className="animate-[dash_20s_linear_infinite]"
+                    />
+                    <circle cx="200" cy="400" r="12" fill="#003461" />
+                    <circle cx="400" cy="300" r="12" fill="#003461" />
+                    <circle cx="600" cy="500" r="12" fill="#003461" />
+                    <circle cx="800" cy="200" r="12" fill="#006b5f" />
+                </svg>
+
+                {/* Floating Intelligence Card */}
+                <div className="absolute bottom-12 left-12 w-80 bg-primary-container text-white p-6 rounded-3xl shadow-2xl border border-white/10 backdrop-blur-md">
+                    <div className="flex items-center gap-3 mb-4">
+                        <div className="p-2 bg-white/10 rounded-xl">
+                            <Explore className="text-secondary-fixed" />
+                        </div>
+                        <h4 className="font-bold text-sm tracking-tight">Route Efficiency Score</h4>
+                    </div>
+                    <div className="text-4xl font-black mb-2 font-headline tracking-tighter">98.4<span className="text-lg font-normal opacity-60 ml-1">/100</span></div>
+                    <p className="text-[10px] opacity-70 leading-relaxed">This route maximizes digital dwell time by 22% compared to standard commuter paths.</p>
+                    <div className="mt-6 pt-6 border-t border-white/10 flex justify-between items-center text-[10px] font-black uppercase tracking-widest">
+                        <span className="text-secondary-fixed">View Heatmap</span>
+                        <ChevronRight className="!text-sm" />
+                    </div>
+                </div>
+            </section>
+
+            <style>{`
+        @keyframes dash {
+          to { stroke-dashoffset: -1000; }
+        }
+      `}</style>
         </div>
     );
 };
+
+const RouteNode: React.FC<{ label: string; address: string; status: string; dotColor: string }> = ({ label, address, status, dotColor }) => (
+    <div className="flex items-start gap-4 p-4 rounded-2xl hover:bg-surface-container-low/50 transition-colors cursor-pointer group">
+        <div className={`w-10 h-10 rounded-full ${dotColor} flex items-center justify-center shrink-0 z-10 border-4 border-white shadow-sm ring-1 ring-outline-variant/10 group-hover:scale-110 transition-transform`}>
+            <div className="w-2 h-2 rounded-full bg-white animate-pulse"></div>
+        </div>
+        <div className="flex-1">
+            <div className="flex justify-between items-start">
+                <h4 className="text-xs font-black text-on-surface uppercase tracking-tighter">{label}</h4>
+                <span className="text-[9px] font-bold text-on-surface-variant opacity-60 uppercase">{status}</span>
+            </div>
+            <p className="text-[11px] text-on-surface-variant mt-0.5 line-clamp-1">{address}</p>
+        </div>
+    </div>
+);
 
 export default RoutePlanner;

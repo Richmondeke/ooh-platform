@@ -7,6 +7,9 @@ import CampaignApproval from './pages/CampaignApproval';
 import RoutePlanner from './pages/RoutePlanner';
 import RouteInventoryList from './pages/RouteInventoryList';
 import RouteCheckout from './pages/RouteCheckout';
+import Reports from './pages/Reports';
+import ScheduledReports from './pages/ScheduledReports';
+import ExportConfig from './pages/ExportConfig';
 
 function App() {
     return (
@@ -20,6 +23,9 @@ function App() {
                     <Route path="config" element={<AssetConfiguration />} />
                     <Route path="checkout" element={<RouteCheckout />} />
                     <Route path="approval" element={<CampaignApproval />} />
+                    <Route path="reports" element={<Reports />} />
+                    <Route path="scheduled-reports" element={<ScheduledReports />} />
+                    <Route path="export-config" element={<ExportConfig />} />
                 </Route>
             </Routes>
         </BrowserRouter>
